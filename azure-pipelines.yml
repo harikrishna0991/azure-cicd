@@ -1,7 +1,7 @@
 trigger:
   branches:
     include:
-      - main  # or your default branch name
+      - main
 
 variables:
   dockerHubUsername: haridoc00
@@ -35,6 +35,6 @@ stages:
           steps:
           - task: AzureWebAppContainer@1
             inputs:
-              azureSubscription: '<your-service-connection-name>'
+              azureSubscription: 'AzureSPNConnection'  
               appName: 'my-app-prod-123'
               imageName: 'haridoc00/flask-app:latest'
